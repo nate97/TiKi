@@ -60,3 +60,13 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+
+# Plasma 5 config
+.directory
+
+# Media files
+.mp3
+.mp4
+.flac
+.m4a

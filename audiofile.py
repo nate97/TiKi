@@ -4,11 +4,10 @@ from mutagen.mp3 import MP3
 import mutagen
 
 # We're treating every audio file as an individual object
-class AudioFileObject:
+class TiKiFile:
 
     def __init__(self):
-        print ('Created music object')
-        
+        print ('Opened music file')
         ### Object globals ###
         self.fileName = ''
         # Audio METADATA
@@ -18,7 +17,7 @@ class AudioFileObject:
         self.tracknumber = ''
         self.genre = ''
         self.date = ''
-        # Audio properties
+        # Audio file properties
         self.audioLength = 0
 
 
@@ -84,6 +83,7 @@ class AudioFileObject:
 
     def getDate(self):
         return self.date
+
 
     def getAudioLength(self):
         return self.audioLength

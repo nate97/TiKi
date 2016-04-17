@@ -4,16 +4,13 @@ from mutagen.mp3 import MP3
 from mutagen import File
 import mutagen
 
-from audiofile import AudioFileObject
+from audiofile import TiKiFile
 
 import vlc
 import time
 import glob, os
 
-
 cwd = os.getcwd()
-
-
 
 class TiKiMediaPlayer:
 
@@ -46,7 +43,7 @@ class TiKiMediaPlayer:
         
         for filename in self.directory:      
             print (filename)
-            audioFile = AudioFileObject()
+            audioFile = TiKiFile()
             audioFile.setFilename(filename)
             audioFile.setMetaData()
 

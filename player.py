@@ -16,7 +16,7 @@ class TiKiPlayer:
         player = instance.media_player_new()
 
         #Load the media file
-        media = instance.media_new(self.File)
+        media = instance.media_new(filename)
 
         #Add the media to the player
         player.set_media(media)

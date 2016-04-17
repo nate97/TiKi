@@ -65,24 +65,8 @@ class TiKiMediaPlayer:
 
 
             # temp
-            self.playAudio(filename, audiolength)
-
-
-    def playAudio(self, filename, audiolength):
-        instance = vlc.Instance()
-
-        #Create a MediaPlayer with the default instance
-        player = instance.media_player_new()
-
-        #Load the media file
-        media = instance.media_new(filename)
-
-        #Add the media to the player
-        player.set_media(media)
-
-        # Play for the length of the song then exit
-        player.play()
-        time.sleep(audiolength)
+            player = TiKiPlayer()
+            player.playAudio(filename, audiolength)
 
 
 

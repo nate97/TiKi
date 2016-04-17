@@ -4,7 +4,7 @@ from mutagen.mp3 import MP3
 from mutagen import File
 import mutagen
 
-from audio import AudioFileObject
+from audiofile import AudioFileObject
 
 import vlc
 import time
@@ -23,9 +23,7 @@ class TiKiMediaPlayer:
         self.searchDirectory()
         self.sortAudio()
 
-
         #self.playAudio()
-
 
 
     # Search directory for all supported file types
@@ -41,7 +39,6 @@ class TiKiMediaPlayer:
         # Sort this basic folder playlist by name
         self.directory.sort()
         
-
 
     def sortAudio(self):
         
@@ -68,7 +65,7 @@ class TiKiMediaPlayer:
             audiolength = audioFile.audioLength
 
 
-    def playAudio(self):
+    def playAudio(self, filename, audiolength):
         instance = vlc.Instance()
 
         #Create a MediaPlayer with the default instance
@@ -80,9 +77,9 @@ class TiKiMediaPlayer:
         #Add the media to the player
         player.set_media(media)
 
-        #Play for the length of the song then exit
+        # Play for the length of the song then exit
         player.play()
-        time.sleep(self.audioLength)
+        time.sleep(audiolength)
 
 
 

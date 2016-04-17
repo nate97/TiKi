@@ -5,6 +5,8 @@ from mutagen import File
 import mutagen
 
 from audiofile import TiKiFile
+from player import TiKiPlayer
+
 
 import vlc
 import time
@@ -15,7 +17,7 @@ cwd = os.getcwd()
 class TiKiMediaPlayer:
 
     def __init__(self):
-        print ('Tiki Media')
+        print ('Tiki Music Player')
 
         self.searchDirectory()
         self.sortAudio()
@@ -62,6 +64,10 @@ class TiKiMediaPlayer:
             audiolength = audioFile.audioLength
 
 
+            # temp
+            self.playAudio(filename, audiolength)
+
+
     def playAudio(self, filename, audiolength):
         instance = vlc.Instance()
 
@@ -69,7 +75,7 @@ class TiKiMediaPlayer:
         player = instance.media_player_new()
 
         #Load the media file
-        media = instance.media_new(self.File)
+        media = instance.media_new(filename)
 
         #Add the media to the player
         player.set_media(media)

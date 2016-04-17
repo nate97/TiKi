@@ -3,7 +3,7 @@ import time
 
 class TiKiPlayer:
     def __init__(self):
-        print 'Started playing audio'
+        print ('Started playing audio')
         # Audio file properties
         self.filename = ''
         self.audiolength = 0

@@ -22,7 +22,7 @@ class TiKiMediaPlayer:
         self.searchDirectory()
         self.sortAudio()
 
-        #self.playAudio()
+        print (self.allMusic['02.mp3'])
 
 
     # Search directory for all supported file types
@@ -63,11 +63,22 @@ class TiKiMediaPlayer:
             
             audiolength = audioFile.audioLength
 
+            temp = {
+                'artist':artist,
+                'title':title,
+                'album':album,
+                'tracknumber':tracknumber,
+                'genre':genre,
+                'date':date,
+                'audiolength':audiolength,
+                }
+
+            # Update music dictionary
+            self.allMusic.update({filename:temp})
 
             # temp
-            player = TiKiPlayer()
-            player.playAudio(filename, audiolength)
-
+            #player = TiKiPlayer()
+            #player.playAudio(filename, audiolength)
 
 
 TiKiMediaPlayer()

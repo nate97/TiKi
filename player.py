@@ -35,16 +35,21 @@ class TiKiPlayer:
         #Add the media to the player
         self.player.set_media(media)
 
-        # Play for the length of the song then exit
+        # Play for the length of the song then quit
         self.player.play()
         time.sleep(self.audiolength)
         
         
+    # Pause audio
+    def pauseAudio(self):
+        pass
+        
+        
+    # Set volume of the audio
     def setVolume(self, volume):
         pass
         
         
-    # Stop currently playing audio
+    # Stop playing audio
     def stopAudio(self):
         pass
-        self.player.stop()
